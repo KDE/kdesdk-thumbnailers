@@ -1,0 +1,9 @@
+[Desktop Entry]
+Type=Service
+Name=Gettext Translation
+X-KDE-ServiceTypes=ThumbCreator
+MimeType=text/x-gettext-translation;text/x-gettext-translation-template;
+CacheThumbnail=false
+IgnoreMaximumSize=true
+X-KDE-Library=pothumbnail
+Configurable=true

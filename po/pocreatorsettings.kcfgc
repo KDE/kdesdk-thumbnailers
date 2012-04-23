@@ -1,0 +1,4 @@
+File=pocreatorsettings.kcfg
+ClassName=PoCreatorSettings
+Singleton=true
+Mutators=true
