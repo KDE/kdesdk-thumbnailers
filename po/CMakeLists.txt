@@ -2,8 +2,7 @@ project(kde-thumbnailer-po)
 cmake_minimum_required(VERSION 2.6)
 
 find_package(KDE4 REQUIRED)
-
-find_library(GETTEXTPO_LIBRARY NAMES gettextpo REQUIRED)
+find_package(GettextPO REQUIRED)
 
 include(KDE4Defaults)
 

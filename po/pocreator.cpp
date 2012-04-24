@@ -26,7 +26,6 @@
 #include <QImage>
 #include <QLatin1String>
 #include <QPainter>
-#include <QVBoxLayout>
 #include <QWidget>
 #include <kdemacros.h>
 #include <KLocale>
