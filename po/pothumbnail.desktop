@@ -1,6 +1,7 @@
 [Desktop Entry]
 Type=Service
 Name=Gettext Translation
+Name[da]=Gettext-oversættelse
 Name[de]=Gettext-Übersetzung
 Name[nl]=Gettext-vertaling
 Name[pt]=Tradução do Gettext
