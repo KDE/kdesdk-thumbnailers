@@ -1,18 +1,6 @@
 [Desktop Entry]
 Type=Service
 Name=Gettext Translation
-Name[da]=Gettext-oversættelse
-Name[de]=Gettext-Übersetzung
-Name[es]=Traducción Gettext
-Name[nl]=Gettext-vertaling
-Name[pl]=Tłumaczenie Gettext
-Name[pt]=Tradução do Gettext
-Name[pt_BR]=Tradução gettext
-Name[sk]=Gettext preklad
-Name[sv]=Översättning med Gettext
-Name[uk]=Переклад Gettext
-Name[x-test]=xxGettext Translationxx
-Name[zh_TW]=Gettext 翻譯
 X-KDE-ServiceTypes=ThumbCreator
 MimeType=text/x-gettext-translation;text/x-gettext-translation-template;
 CacheThumbnail=false
