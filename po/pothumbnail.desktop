@@ -3,6 +3,7 @@ Type=Service
 Name=Gettext Translation
 Name[es]=Traducción de Gettext
 Name[nl]=Gettext-vertaling
+Name[pl]=Tłumaczenie Gettext
 Name[pt]=Tradução do Gettext
 Name[pt_BR]=Tradução gettext
 Name[uk]=Переклад Gettext
