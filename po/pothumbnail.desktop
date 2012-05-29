@@ -12,6 +12,7 @@ Name[pt_BR]=Tradução gettext
 Name[sv]=Översättning med Gettext
 Name[uk]=Переклад Gettext
 Name[x-test]=xxGettext Translationxx
+Name[zh_CN]=Gettext 翻译
 X-KDE-ServiceTypes=ThumbCreator
 MimeType=text/x-gettext-translation;text/x-gettext-translation-template;
 CacheThumbnail=false
