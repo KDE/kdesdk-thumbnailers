@@ -2,6 +2,7 @@
 Type=Service
 Name=Gettext Translation
 Name[ca]=Traducció del Gettext
+Name[da]=Gettext-oversættelse
 Name[es]=Traducción de Gettext
 Name[et]=Gettexti tõlkefail
 Name[fr]=Traduction Gettext
