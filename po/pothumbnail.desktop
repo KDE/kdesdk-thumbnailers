@@ -2,9 +2,15 @@
 Type=Service
 Name=Gettext Translation
 Name[ca]=Traducció del Gettext
+Name[da]=Gettext-oversættelse
 Name[es]=Traducción de Gettext
 Name[et]=Gettexti tõlkefail
+Name[fi]=Gettext-käännös
+Name[fr]=Traduction Gettext
+Name[hu]=Gettext fordítás
 Name[it]=Traduzioni di Gettext
+Name[kk]=Gettext аудармасы
+Name[lt]=Gettext vertimas
 Name[nl]=Gettext-vertaling
 Name[pa]=Gettext ਅਨੁਵਾਦ
 Name[pl]=Tłumaczenie Gettext
