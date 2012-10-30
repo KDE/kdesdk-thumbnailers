@@ -3,6 +3,7 @@ Type=Service
 Name=Gettext Translation
 Name[ca]=Traducció del Gettext
 Name[da]=Gettext-oversættelse
+Name[el]=Gettext Μετάφραση
 Name[es]=Traducción de Gettext
 Name[et]=Gettexti tõlkefail
 Name[fi]=Gettext-käännös
