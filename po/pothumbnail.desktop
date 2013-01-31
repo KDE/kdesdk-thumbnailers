@@ -3,6 +3,7 @@ Type=Service
 Name=Gettext Translation
 Name[bs]=GetText prijevod
 Name[ca]=Traducció del Gettext
+Name[ca@valencia]=Traducció del Gettext
 Name[da]=Gettext-oversættelse
 Name[de]=Gettext-Übersetzung
 Name[el]=Μετάφραση με gettext
