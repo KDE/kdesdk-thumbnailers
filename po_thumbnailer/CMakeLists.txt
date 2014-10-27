@@ -1,23 +1,22 @@
 project(kde-thumbnailer-po)
 cmake_minimum_required(VERSION 2.6)
 
-find_package(KDE4 REQUIRED)
 find_package(GettextPO REQUIRED)
 
-include(KDE4Defaults)
-
-add_definitions(${QT_DEFINITIONS} ${KDE4_DEFINITIONS})
-include_directories(${QT_INCLUDES} ${KDE4_INCLUDES})
+add_definitions(${QT_DEFINITIONS})
 
 set(pothumbnail_SRCS pocreator.cpp)
 
-kde4_add_ui_files(pothumbnail_SRCS pocreatorform.ui)
+ki18n_wrap_ui(pothumbnail_SRCS pocreatorform.ui)
 
-kde4_add_kcfg_files(pothumbnail_SRCS pocreatorsettings.kcfgc)
+kconfig_add_kcfg_files(pothumbnail_SRCS pocreatorsettings.kcfgc)
 
-kde4_add_plugin(pothumbnail ${pothumbnail_SRCS})
+add_library(pothumbnail MODULE ${pothumbnail_SRCS})
 target_link_libraries(pothumbnail
-    ${KDE4_KIO_LIBS}
+    Qt5::Widgets
+    KF5::I18n
+    KF5::ConfigGui
+    KF5::KIOWidgets
     ${GETTEXTPO_LIBRARY}
 )
 

@@ -27,15 +27,13 @@
 #include <QLatin1String>
 #include <QPainter>
 #include <QWidget>
-#include <kdemacros.h>
-#include <KLocale>
+#include <KLocalizedString>
 
 #include "pocreatorsettings.h"
 #include "ui_pocreatorform.h"
 
 extern "C" {
-    KDE_EXPORT ThumbCreator* new_creator() {
-        KGlobal::locale()->insertCatalog( QLatin1String( "pothumbnail" ) );
+    Q_DECL_EXPORT ThumbCreator* new_creator() {
         return new PoCreator;
     }
 }

@@ -1,15 +1,32 @@
 project(thumbnailers)
 
-find_package(KDE4 REQUIRED)
-include(KDE4Defaults)
+cmake_minimum_required(VERSION 2.8.12 FATAL_ERROR)
+set(QT_MIN_VERSION "5.2.0")
 
-set(CMAKE_MODULE_PATH ${CMAKE_CURRENT_SOURCE_DIR}/cmake/modules )
+find_package(ECM 1.0.0 REQUIRED NO_MODULE)
+set(CMAKE_MODULE_PATH ${CMAKE_CURRENT_SOURCE_DIR}/cmake/modules ${ECM_MODULE_PATH} ${ECM_KDE_MODULE_DIR})
 
-macro_optional_find_package(GettextPO)
-macro_log_feature(GETTEXTPO_FOUND "gettext-po" "A library for processing PO files" "www.gnu.org/software/gettext" FALSE "" "Required to build the PO thumbnailer")
+include(ECMOptionalAddSubdirectory)
+include(KDEInstallDirs)
+include(KDECMakeSettings)
+include(KDECompilerSettings)
+include(FeatureSummary)
+
+find_package(Qt5 ${QT_MIN_VERSION} CONFIG REQUIRED COMPONENTS Widgets)
+find_package(KF5 REQUIRED COMPONENTS Config I18n KIO)
+
+add_definitions(-DTRANSLATION_DOMAIN="pothumbnail")
+
+find_package(GettextPO)
+set_package_properties("gettext-po"    PROPERTIES
+                       DESCRIPTION "A library for processing PO files"
+                       URL         "www.gnu.org/software/gettext"
+                       TYPE        OPTIONAL
+                       PURPOSE     "Required to build the PO thumbnailer"
+)
 
 if(GETTEXTPO_FOUND)
-macro_optional_add_subdirectory(po_thumbnailer)
+ecm_optional_add_subdirectory(po_thumbnailer)
 endif(GETTEXTPO_FOUND)
 
-macro_display_feature_log()
+feature_summary(WHAT ALL INCLUDE_QUIET_PACKAGES FATAL_ON_MISSING_REQUIRED_PACKAGES)
