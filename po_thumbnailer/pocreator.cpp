@@ -190,5 +190,5 @@ void PoCreator::writeConfiguration( const QWidget* configurationWidget )
     PoCreatorSettings::self()->setFuzzyColor( cw->fuzzyButton->color() );
     PoCreatorSettings::self()->setUntranslatedColor( cw->untranslatedButton->color() );
     PoCreatorSettings::self()->setObsoletedColor( cw->obsoletedButton->color() );
-    PoCreatorSettings::self()->writeConfig();
+    PoCreatorSettings::self()->save();
 }
