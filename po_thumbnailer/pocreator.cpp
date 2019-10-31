@@ -119,6 +119,11 @@ bool PoCreator::create( const QString& path, int width, int height, QImage& img 
 
     int total = translate + untranslate + fuzzy + obsolete;
 
+    if (total == 0) {
+        // Treat a .po file with no strings as an invalid file
+        return false;
+    }
+
     int d = ( width < height ) ? width - 2 : height - 2;
 
     QImage pix( d + 2, d + 2, QImage::Format_ARGB32_Premultiplied );
