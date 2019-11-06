@@ -27,11 +27,11 @@
 class PoCreator : public ThumbCreator
 {
     public:
-        explicit PoCreator();
-        virtual ~PoCreator();
-        virtual bool create( const QString& path, int width, int height, QImage& img );
-        virtual QWidget* createConfigurationWidget();
-        virtual void writeConfiguration( const QWidget* configurationWidget );
+        PoCreator();
+        ~PoCreator() override;
+        bool create( const QString& path, int width, int height, QImage& img ) override;
+        QWidget* createConfigurationWidget() override;
+        void writeConfiguration( const QWidget* configurationWidget ) override;
 };
 
 #endif // POCREATOR_H
