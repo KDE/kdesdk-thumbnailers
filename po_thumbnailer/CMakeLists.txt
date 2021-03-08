@@ -3,8 +3,6 @@ cmake_minimum_required(VERSION 2.6)
 
 find_package(GettextPO REQUIRED)
 
-add_definitions(${QT_DEFINITIONS})
-
 set(pothumbnail_SRCS pocreator.cpp)
 
 ki18n_wrap_ui(pothumbnail_SRCS pocreatorform.ui)
