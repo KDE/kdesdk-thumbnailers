@@ -18,6 +18,6 @@ target_link_libraries(pothumbnail
     ${GETTEXTPO_LIBRARY}
 )
 
-install(TARGETS pothumbnail DESTINATION ${PLUGIN_INSTALL_DIR})
-install(FILES pocreatorsettings.kcfg DESTINATION ${KCFG_INSTALL_DIR})
-install(FILES pothumbnail.desktop DESTINATION ${SERVICES_INSTALL_DIR})
+install(TARGETS pothumbnail DESTINATION ${KDE_INSTALL_PLUGINDIR})
+install(FILES pocreatorsettings.kcfg DESTINATION ${KDE_INSTALL_KCFGDIR})
+install(FILES pothumbnail.desktop DESTINATION ${KDE_INSTALL_KSERVICES5DIR})
