@@ -6,11 +6,11 @@
 #  GETTEXTPO_INCLUDE_DIR - The GETTEXTPO include directory
 #  GETTEXTPO_LIBRARY - The library needed to use GETTEXTPO
 
-# Copyright (c) 2012, Ni Hui <shuizhuyuanluo@126.com>
-# Based off FindLibXml2.cmake from CMake 2.6.4 by Alexander Neundorf <neundorf@kde.org>
+# SPDX-FileCopyrightText: 2012 Ni Hui <shuizhuyuanluo@126.com>
+# Based off FindLibXml2.cmake from CMake 2.6.4:
+# SPDX-FileCopyrightText: Alexander Neundorf <neundorf@kde.org>
 #
-# Redistribution and use is allowed according to the terms of the BSD license.
-# For details see the accompanying COPYING-CMAKE-SCRIPTS file.
+# SPDX-License-Identifier: BSD-3-Clause
 
 
 if(GETTEXTPO_INCLUDE_DIR AND GETTEXTPO_LIBRARY)
