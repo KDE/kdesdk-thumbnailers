@@ -15,7 +15,7 @@ target_link_libraries(pothumbnail
     KF5::I18n
     KF5::ConfigGui
     KF5::KIOWidgets
-    ${GETTEXTPO_LIBRARY}
+    GettextPO::GettextPO
 )
 
 install(TARGETS pothumbnail DESTINATION ${KDE_INSTALL_PLUGINDIR})

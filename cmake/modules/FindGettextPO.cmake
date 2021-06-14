@@ -29,3 +29,11 @@ include(FindPackageHandleStandardArgs)
 find_package_handle_standard_args(GettextPO DEFAULT_MSG GETTEXTPO_LIBRARY GETTEXTPO_INCLUDE_DIR)
 
 mark_as_advanced(GETTEXTPO_INCLUDE_DIR GETTEXTPO_LIBRARY)
+
+if (GETTEXTPO_FOUND AND NOT TARGET GettextPO::GettextPO)
+    add_library(GettextPO::GettextPO UNKNOWN IMPORTED)
+    set_target_properties(GettextPO::GettextPO PROPERTIES
+        IMPORTED_LOCATION "${GETTEXTPO_LIBRARY}"
+        INTERFACE_INCLUDE_DIRECTORIES "${GETTEXTPO_INCLUDE_DIR}"
+    )
+endif()
