@@ -1,12 +1,15 @@
 add_definitions(-DTRANSLATION_DOMAIN="pothumbnail")
 
-set(pothumbnail_SRCS pocreator.cpp)
+add_library(pothumbnail MODULE)
 
-ki18n_wrap_ui(pothumbnail_SRCS pocreatorform.ui)
+target_sources(pothumbnail PRIVATE
+    pocreator.cpp
+)
 
-kconfig_add_kcfg_files(pothumbnail_SRCS pocreatorsettings.kcfgc)
+ki18n_wrap_ui(pothumbnail pocreatorform.ui)
 
-add_library(pothumbnail MODULE ${pothumbnail_SRCS})
+kconfig_add_kcfg_files(pothumbnail pocreatorsettings.kcfgc)
+
 target_link_libraries(pothumbnail
     Qt5::Widgets
     KF5::I18n
