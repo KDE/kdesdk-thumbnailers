@@ -99,7 +99,7 @@ bool PoCreator::create( const QString& path, int width, int height, QImage& img 
     int fuzzy = 0;
     int obsolete = 0;
 
-    if ( !get_po_info( path.toLocal8Bit(), translate, untranslate, fuzzy, obsolete ) )
+    if ( !get_po_info( path.toLocal8Bit().constData(), translate, untranslate, fuzzy, obsolete ) )
         return false;
 
     int total = translate + untranslate + fuzzy + obsolete;
