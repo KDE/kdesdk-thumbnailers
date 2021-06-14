@@ -1,9 +1,11 @@
-cmake_minimum_required(VERSION 3.5 FATAL_ERROR)
+cmake_minimum_required(VERSION 3.16)
 
 project(thumbnailers)
-set(QT_MIN_VERSION "5.2.0")
 
-find_package(ECM 1.0.0 REQUIRED NO_MODULE)
+set(QT_MIN_VERSION "5.15.0")
+set(KF_MIN_VERSION "5.83.0")
+
+find_package(ECM ${KF_MIN_VERSION} REQUIRED NO_MODULE)
 set(CMAKE_MODULE_PATH ${CMAKE_CURRENT_SOURCE_DIR}/cmake/modules ${ECM_MODULE_PATH})
 
 include(KDEInstallDirs)
@@ -14,7 +16,7 @@ include(ECMOptionalAddSubdirectory)
 include(FeatureSummary)
 
 find_package(Qt5 ${QT_MIN_VERSION} CONFIG REQUIRED COMPONENTS Widgets)
-find_package(KF5 REQUIRED COMPONENTS Config I18n KIO)
+find_package(KF5 ${KF_MIN_VERSION} REQUIRED COMPONENTS Config I18n KIO)
 
 find_package(GettextPO)
 set_package_properties("gettext-po"    PROPERTIES
