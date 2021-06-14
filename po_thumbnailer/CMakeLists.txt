@@ -1,3 +1,5 @@
+add_definitions(-DTRANSLATION_DOMAIN="pothumbnail")
+
 set(pothumbnail_SRCS pocreator.cpp)
 
 ki18n_wrap_ui(pothumbnail_SRCS pocreatorform.ui)

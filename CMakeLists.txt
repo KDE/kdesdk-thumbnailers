@@ -15,8 +15,6 @@ include(FeatureSummary)
 find_package(Qt5 ${QT_MIN_VERSION} CONFIG REQUIRED COMPONENTS Widgets)
 find_package(KF5 REQUIRED COMPONENTS Config I18n KIO)
 
-add_definitions(-DTRANSLATION_DOMAIN="pothumbnail")
-
 find_package(GettextPO)
 set_package_properties("gettext-po"    PROPERTIES
                        DESCRIPTION "A library for processing PO files"
