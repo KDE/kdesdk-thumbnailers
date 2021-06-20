@@ -1,6 +1,7 @@
 [Desktop Entry]
 Type=Service
 Name=Gettext Translation
+Name[ar]=ترجمة جتكست
 Name[ast]=Ficheros de gettext
 Name[bs]=GetText prijevod
 Name[ca]=Traducció de Gettext
