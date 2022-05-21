@@ -44,4 +44,6 @@ if(GETTEXTPO_FOUND)
 ecm_optional_add_subdirectory(po_thumbnailer)
 endif()
 
+ki18n_install(po)
+
 feature_summary(WHAT ALL INCLUDE_QUIET_PACKAGES FATAL_ON_MISSING_REQUIRED_PACKAGES)
