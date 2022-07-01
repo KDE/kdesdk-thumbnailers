@@ -3,6 +3,7 @@ Type=Service
 Name=Gettext Translation
 Name[ar]=ترجمة جتكست
 Name[ast]=Ficheros de gettext
+Name[bg]=Gettext Translation
 Name[bs]=GetText prijevod
 Name[ca]=Traducció de Gettext
 Name[ca@valencia]=Traducció de Gettext
