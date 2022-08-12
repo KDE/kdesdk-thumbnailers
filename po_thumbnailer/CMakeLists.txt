@@ -1,6 +1,6 @@
 add_definitions(-DTRANSLATION_DOMAIN="pothumbnail")
 
-add_library(pothumbnail MODULE)
+kcoreaddons_add_plugin(pothumbnail INSTALL_NAMESPACE "kf${QT_MAJOR_VERSION}/thumbcreator")
 
 target_sources(pothumbnail PRIVATE
     pocreator.cpp
@@ -18,6 +18,4 @@ target_link_libraries(pothumbnail
     GettextPO::GettextPO
 )
 
-install(TARGETS pothumbnail DESTINATION ${KDE_INSTALL_PLUGINDIR})
 install(FILES pocreatorsettings.kcfg DESTINATION ${KDE_INSTALL_KCFGDIR})
-install(FILES pothumbnail.desktop DESTINATION ${KDE_INSTALL_KSERVICES5DIR})

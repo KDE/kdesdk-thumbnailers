@@ -23,6 +23,13 @@ extern "C" {
     }
 }
 
+class KIOPluginForMetaData : public QObject
+{
+    Q_OBJECT
+    Q_PLUGIN_METADATA(IID "KIOPluginForMetaData" FILE "pothumbnail.json")
+};
+
+
 static bool readerror = false;
 
 static void xerror( int severity,
@@ -182,3 +189,5 @@ void PoCreator::writeConfiguration( const QWidget* configurationWidget )
     PoCreatorSettings::self()->setObsoletedColor( cw->obsoletedButton->color() );
     PoCreatorSettings::self()->save();
 }
+
+#include "pocreator.moc"

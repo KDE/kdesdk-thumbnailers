@@ -1,0 +1,12 @@
+{
+    "CacheThumbnail": false,
+    "Configurable": true,
+    "IgnoreMaximumSize": true,
+    "KPlugin": {
+        "MimeTypes": [
+            "text/x-gettext-translation",
+            "text/x-gettext-translation-template"
+        ],
+        "Name": "Gettext Translation"
+    }
+}
