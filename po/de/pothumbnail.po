@@ -1,0 +1,38 @@
+# Frederik Schwarzer <schwarzer@kde.org>, 2012.
+msgid ""
+msgstr ""
+"Project-Id-Version: pothumbnail\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2019-05-20 03:12+0200\n"
+"PO-Revision-Date: 2012-04-25 17:55+0200\n"
+"Last-Translator: Frederik Schwarzer <schwarzer@kde.org>\n"
+"Language-Team: German <kde-i18n-de@kde.org>\n"
+"Language: de\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: pocreatorform.ui:20
+#, kde-format
+msgid "Translated: "
+msgstr "Übersetzt: "
+
+#. i18n: ectx: property (text), widget (QLabel, label_2)
+#: pocreatorform.ui:30
+#, kde-format
+msgid "Fuzzy: "
+msgstr "Nicht fertig: "
+
+#. i18n: ectx: property (text), widget (QLabel, label_3)
+#: pocreatorform.ui:40
+#, kde-format
+msgid "Untranslated: "
+msgstr "Nicht übersetzt: "
+
+#. i18n: ectx: property (text), widget (QLabel, label_4)
+#: pocreatorform.ui:50
+#, kde-format
+msgid "Obsoleted: "
+msgstr "Veraltet: "

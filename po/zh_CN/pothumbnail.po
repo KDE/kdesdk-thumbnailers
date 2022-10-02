@@ -1,0 +1,42 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: kdeorg\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2019-05-20 03:12+0200\n"
+"PO-Revision-Date: 2022-09-20 01:55\n"
+"Last-Translator: \n"
+"Language-Team: Chinese Simplified\n"
+"Language: zh_CN\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Crowdin-Project: kdeorg\n"
+"X-Crowdin-Project-ID: 269464\n"
+"X-Crowdin-Language: zh-CN\n"
+"X-Crowdin-File: /kf5-trunk/messages/kdesdk-thumbnailers/pothumbnail.pot\n"
+"X-Crowdin-File-ID: 5872\n"
+
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: pocreatorform.ui:20
+#, kde-format
+msgid "Translated: "
+msgstr "已翻译："
+
+#. i18n: ectx: property (text), widget (QLabel, label_2)
+#: pocreatorform.ui:30
+#, kde-format
+msgid "Fuzzy: "
+msgstr "模糊翻译："
+
+#. i18n: ectx: property (text), widget (QLabel, label_3)
+#: pocreatorform.ui:40
+#, kde-format
+msgid "Untranslated: "
+msgstr "未翻译："
+
+#. i18n: ectx: property (text), widget (QLabel, label_4)
+#: pocreatorform.ui:50
+#, kde-format
+msgid "Obsoleted: "
+msgstr "已废弃："
