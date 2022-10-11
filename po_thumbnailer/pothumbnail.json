@@ -7,6 +7,15 @@
             "text/x-gettext-translation",
             "text/x-gettext-translation-template"
         ],
-        "Name": "Gettext Translation"
+        "Name": "Gettext Translation",
+        "Name[ar]": "ترجمة غتكست",
+        "Name[ca@valencia]": "Traducció de Gettext",
+        "Name[ca]": "Traducció del Gettext",
+        "Name[es]": "Traducción de Gettext",
+        "Name[eu]": "Gettext itzulpena",
+        "Name[fr]": "Traduction de Gettext",
+        "Name[tr]": "Gettext Çevirisi",
+        "Name[uk]": "переклад Gettext",
+        "Name[x-test]": "xxGettext Translationxx"
     }
 }
