@@ -22,7 +22,7 @@ include(KDECompilerSettings NO_POLICY_SCOPE)
 include(ECMOptionalAddSubdirectory)
 include(FeatureSummary)
 
-find_package(Qt5 ${QT_MIN_VERSION} CONFIG REQUIRED COMPONENTS Widgets)
+find_package(Qt${QT_MAJOR_VERSION} ${QT_MIN_VERSION} CONFIG REQUIRED COMPONENTS Widgets)
 find_package(KF5 ${KF_MIN_VERSION} REQUIRED COMPONENTS Config I18n KIO)
 
 find_package(GettextPO)
