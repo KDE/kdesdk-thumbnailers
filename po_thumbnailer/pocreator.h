@@ -15,8 +15,10 @@ class PoCreator : public ThumbCreator
         PoCreator();
         ~PoCreator() override;
         bool create( const QString& path, int width, int height, QImage& img ) override;
+#if KIOWIDGETS_ENABLE_DEPRECATED_SINCE(5, 87)
         QWidget* createConfigurationWidget() override;
         void writeConfiguration( const QWidget* configurationWidget ) override;
+#endif
 };
 
 #endif // POCREATOR_H

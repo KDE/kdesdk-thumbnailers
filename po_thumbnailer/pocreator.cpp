@@ -164,6 +164,8 @@ bool PoCreator::create( const QString& path, int width, int height, QImage& img 
     return true;
 }
 
+#if KIOWIDGETS_ENABLE_DEPRECATED_SINCE(5, 87)
+
 class PoCreatorFormWidget : public QWidget, public Ui::PoCreatorForm
 {
 public:
@@ -189,5 +191,7 @@ void PoCreator::writeConfiguration( const QWidget* configurationWidget )
     PoCreatorSettings::self()->setObsoletedColor( cw->obsoletedButton->color() );
     PoCreatorSettings::self()->save();
 }
+
+#endif
 
 #include "pocreator.moc"
