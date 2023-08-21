@@ -7,18 +7,14 @@
 #ifndef POCREATOR_H
 #define POCREATOR_H
 
-#include <KIO/ThumbCreator>
+#include <KIO/ThumbnailCreator>
 
-class PoCreator : public ThumbCreator
+class PoCreator : public KIO::ThumbnailCreator
 {
     public:
-        PoCreator();
+        PoCreator(QObject *parent, const QVariantList &args);
         ~PoCreator() override;
-        bool create( const QString& path, int width, int height, QImage& img ) override;
-#if KIOWIDGETS_ENABLE_DEPRECATED_SINCE(5, 87)
-        QWidget* createConfigurationWidget() override;
-        void writeConfiguration( const QWidget* configurationWidget ) override;
-#endif
+        KIO::ThumbnailResult create( const KIO::ThumbnailRequest &request ) override;
 };
 
 #endif // POCREATOR_H

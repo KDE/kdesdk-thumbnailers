@@ -12,9 +12,10 @@ kconfig_add_kcfg_files(pothumbnail pocreatorsettings.kcfgc)
 
 target_link_libraries(pothumbnail
     Qt::Widgets
-    KF5::I18n
-    KF5::ConfigGui
-    KF5::KIOWidgets
+    KF${QT_MAJOR_VERSION}::I18n
+    KF${QT_MAJOR_VERSION}::ConfigGui
+    KF${QT_MAJOR_VERSION}::KIOGui
+    KF${QT_MAJOR_VERSION}::WidgetsAddons
     GettextPO::GettextPO
 )
 

@@ -12,23 +12,14 @@
 #include <QLatin1String>
 #include <QPainter>
 #include <QWidget>
+
 #include <KLocalizedString>
+#include <KPluginFactory>
 
 #include "pocreatorsettings.h"
 #include "ui_pocreatorform.h"
 
-extern "C" {
-    Q_DECL_EXPORT ThumbCreator* new_creator() {
-        return new PoCreator;
-    }
-}
-
-class KIOPluginForMetaData : public QObject
-{
-    Q_OBJECT
-    Q_PLUGIN_METADATA(IID "KIOPluginForMetaData" FILE "pothumbnail.json")
-};
-
+K_PLUGIN_CLASS_WITH_JSON(PoCreator, "pothumbnail.json")
 
 static bool readerror = false;
 
@@ -91,7 +82,8 @@ static bool get_po_info( const char* filepath, int& translate, int& untranslate,
     return true;
 }
 
-PoCreator::PoCreator()
+PoCreator::PoCreator(QObject *parent, const QVariantList &args)
+    : KIO::ThumbnailCreator(parent, args)
 {
 }
 
@@ -99,24 +91,24 @@ PoCreator::~PoCreator()
 {
 }
 
-bool PoCreator::create( const QString& path, int width, int height, QImage& img )
+KIO::ThumbnailResult PoCreator::create( const KIO::ThumbnailRequest &request )
 {
     int translate = 0;
     int untranslate = 0;
     int fuzzy = 0;
     int obsolete = 0;
 
-    if ( !get_po_info( path.toLocal8Bit().constData(), translate, untranslate, fuzzy, obsolete ) )
-        return false;
+    if ( !get_po_info( request.url().toLocalFile().toLocal8Bit().constData(), translate, untranslate, fuzzy, obsolete ) )
+        return KIO::ThumbnailResult::fail();
 
     int total = translate + untranslate + fuzzy + obsolete;
 
     if (total == 0) {
         // Treat a .po file with no strings as an invalid file
-        return false;
+        return KIO::ThumbnailResult::fail();
     }
 
-    int d = ( width < height ) ? width - 2 : height - 2;
+    int d = ( request.targetSize().width() < request.targetSize().height() ) ? request.targetSize().width() - 2 : request.targetSize().height() - 2;
 
     QImage pix( d + 2, d + 2, QImage::Format_ARGB32_Premultiplied );
     pix.fill( Qt::transparent ); /// transparent background
@@ -159,39 +151,7 @@ bool PoCreator::create( const QString& path, int width, int height, QImage& img 
             p.drawPie( 1, 1, d, d, -fuzzyAngle-untranslateAngle-obsoleteAngle, -translateAngle );
     }
 
-    img = pix;
-
-    return true;
+    return KIO::ThumbnailResult::pass(pix);
 }
-
-#if KIOWIDGETS_ENABLE_DEPRECATED_SINCE(5, 87)
-
-class PoCreatorFormWidget : public QWidget, public Ui::PoCreatorForm
-{
-public:
-    PoCreatorFormWidget() { setupUi( this ); }
-};
-
-QWidget* PoCreator::createConfigurationWidget()
-{
-    PoCreatorFormWidget* cw = new PoCreatorFormWidget;
-    cw->translatedButton->setColor( PoCreatorSettings::self()->translatedColor() );
-    cw->fuzzyButton->setColor( PoCreatorSettings::self()->fuzzyColor() );
-    cw->untranslatedButton->setColor( PoCreatorSettings::self()->untranslatedColor() );
-    cw->obsoletedButton->setColor( PoCreatorSettings::self()->obsoletedColor() );
-    return cw;
-}
-
-void PoCreator::writeConfiguration( const QWidget* configurationWidget )
-{
-    const PoCreatorFormWidget* cw = static_cast<const PoCreatorFormWidget*>(configurationWidget);
-    PoCreatorSettings::self()->setTranslatedColor( cw->translatedButton->color() );
-    PoCreatorSettings::self()->setFuzzyColor( cw->fuzzyButton->color() );
-    PoCreatorSettings::self()->setUntranslatedColor( cw->untranslatedButton->color() );
-    PoCreatorSettings::self()->setObsoletedColor( cw->obsoletedButton->color() );
-    PoCreatorSettings::self()->save();
-}
-
-#endif
 
 #include "pocreator.moc"
