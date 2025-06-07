@@ -1,6 +1,6 @@
 add_definitions(-DTRANSLATION_DOMAIN="pothumbnail")
 
-kcoreaddons_add_plugin(pothumbnail INSTALL_NAMESPACE "kf${QT_MAJOR_VERSION}/thumbcreator")
+kcoreaddons_add_plugin(pothumbnail INSTALL_NAMESPACE "kf6/thumbcreator")
 
 target_sources(pothumbnail PRIVATE
     pocreator.cpp
@@ -12,10 +12,10 @@ kconfig_add_kcfg_files(pothumbnail pocreatorsettings.kcfgc)
 
 target_link_libraries(pothumbnail
     Qt::Widgets
-    KF${QT_MAJOR_VERSION}::I18n
-    KF${QT_MAJOR_VERSION}::ConfigGui
-    KF${QT_MAJOR_VERSION}::KIOGui
-    KF${QT_MAJOR_VERSION}::WidgetsAddons
+    KF6::I18n
+    KF6::ConfigGui
+    KF6::KIOGui
+    KF6::WidgetsAddons
     GettextPO::GettextPO
 )
 
