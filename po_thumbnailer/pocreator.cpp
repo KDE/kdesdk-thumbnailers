@@ -9,15 +9,9 @@
 #include <gettext-po.h>
 #include <QColor>
 #include <QImage>
-#include <QLatin1String>
 #include <QPainter>
-#include <QWidget>
 
-#include <KLocalizedString>
 #include <KPluginFactory>
-
-#include "pocreatorsettings.h"
-#include "ui_pocreatorform.h"
 
 K_PLUGIN_CLASS_WITH_JSON(PoCreator, "pothumbnail.json")
 
@@ -123,28 +117,28 @@ KIO::ThumbnailResult PoCreator::create( const KIO::ThumbnailRequest &request )
     p.setRenderHint( QPainter::Antialiasing );
 
     if ( fuzzyAngle > 0 ) {
-        p.setBrush( PoCreatorSettings::self()->fuzzyColor() );
+        p.setBrush( Qt::blue );
         if ( fuzzy == total )
             p.drawEllipse( 1, 1, d, d );
         else
             p.drawPie( 1, 1, d, d, 0, -fuzzyAngle );
     }
     if ( untranslateAngle > 0 ) {
-        p.setBrush( PoCreatorSettings::self()->untranslatedColor() );
+        p.setBrush( Qt::red );
         if ( untranslate == total )
             p.drawEllipse( 1, 1, d, d );
         else
             p.drawPie( 1, 1, d, d, -fuzzyAngle, -untranslateAngle );
     }
     if ( obsoleteAngle > 0 ) {
-        p.setBrush( PoCreatorSettings::self()->obsoletedColor() );
+        p.setBrush( Qt::yellow );
         if ( obsolete == total )
             p.drawEllipse( 1, 1, d, d );
         else
             p.drawPie( 1, 1, d, d, -fuzzyAngle-untranslateAngle, -obsoleteAngle );
     }
     if ( translateAngle > 0 ) {
-        p.setBrush( PoCreatorSettings::self()->translatedColor() );
+        p.setBrush( Qt::darkGreen );
         if ( translate == total )
             p.drawEllipse( 1, 1, d, d );
         else

@@ -23,8 +23,8 @@ include(ECMDeprecationSettings)
 include(ECMOptionalAddSubdirectory)
 include(FeatureSummary)
 
-find_package(Qt6 ${QT_MIN_VERSION} CONFIG REQUIRED COMPONENTS Widgets)
-find_package(KF6 ${KF_MIN_VERSION} REQUIRED COMPONENTS Config I18n KIO)
+find_package(Qt6 ${QT_MIN_VERSION} CONFIG REQUIRED)
+find_package(KF6 ${KF_MIN_VERSION} REQUIRED COMPONENTS KIO)
 
 find_package(GettextPO)
 set_package_properties("gettext-po"    PROPERTIES
@@ -40,9 +40,7 @@ ecm_set_disabled_deprecation_versions(
 )
 
 if(GETTEXTPO_FOUND)
-ecm_optional_add_subdirectory(po_thumbnailer)
+    ecm_optional_add_subdirectory(po_thumbnailer)
 endif()
-
-ki18n_install(po)
 
 feature_summary(WHAT ALL INCLUDE_QUIET_PACKAGES FATAL_ON_MISSING_REQUIRED_PACKAGES)
