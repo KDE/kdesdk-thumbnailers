@@ -26,6 +26,9 @@ include(FeatureSummary)
 find_package(Qt6 ${QT_MIN_VERSION} CONFIG REQUIRED)
 find_package(KF6 ${KF_MIN_VERSION} REQUIRED COMPONENTS KIO)
 
+option(BUILD_FUZZERS "Whether to the thumbnail build fuzzers" OFF)
+option(FUZZERS_USE_QT_MINIMAL_INTEGRATION_PLUGIN "Whether to use the Qt minimal integration plugin for fuzzers" OFF)
+
 find_package(GettextPO)
 set_package_properties("gettext-po"    PROPERTIES
                        DESCRIPTION "A library for processing PO files"
@@ -41,6 +44,14 @@ ecm_set_disabled_deprecation_versions(
 
 if(GETTEXTPO_FOUND)
     ecm_optional_add_subdirectory(po_thumbnailer)
+endif()
+
+if(BUILD_FUZZERS)
+    if(BUILD_SHARED_LIBS)
+        message(FATAL_ERROR "Fuzzers can only be built with static libraries")
+    else()
+        add_subdirectory(autotests/ossfuzz)
+    endif()
 endif()
 
 feature_summary(WHAT ALL INCLUDE_QUIET_PACKAGES FATAL_ON_MISSING_REQUIRED_PACKAGES)
