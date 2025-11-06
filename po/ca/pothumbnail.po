@@ -1,0 +1,44 @@
+# Translation of pothumbnail.po to Catalan
+# Copyright (C) 2025 This_file_is_part_of_KDE
+# This file is distributed under the license LGPL version 2.1 or
+# version 3 or later versions approved by the membership of KDE e.V.
+#
+# SPDX-FileCopyrightText: 2025 Josep M. Ferrer <txemaq@gmail.com>
+msgid ""
+msgstr ""
+"Project-Id-Version: kdesdk-thumbnailers\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2023-11-05 12:37+0000\n"
+"PO-Revision-Date: 2025-11-06 17:39+0100\n"
+"Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
+"Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
+"Language: ca\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Lokalize 25.04.0\n"
+
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: pocreatorform.ui:20
+#, kde-format
+msgid "Translated: "
+msgstr "Traduïda: "
+
+#. i18n: ectx: property (text), widget (QLabel, label_2)
+#: pocreatorform.ui:30
+#, kde-format
+msgid "Fuzzy: "
+msgstr "Difusa: "
+
+#. i18n: ectx: property (text), widget (QLabel, label_3)
+#: pocreatorform.ui:40
+#, kde-format
+msgid "Untranslated: "
+msgstr "Sense traduir: "
+
+#. i18n: ectx: property (text), widget (QLabel, label_4)
+#: pocreatorform.ui:50
+#, kde-format
+msgid "Obsoleted: "
+msgstr "Obsoleta:"
