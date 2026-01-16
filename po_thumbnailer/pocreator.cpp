@@ -44,8 +44,13 @@ static bool get_po_info( const char* filepath, int& translate, int& untranslate,
     const struct po_xerror_handler handler = { xerror, xerror2 };
 
     pofile = po_file_read( filepath, &handler );
-    if ( pofile == NULL || readerror )
+    if ( pofile == NULL ) {
+         return false;
+    }
+    if ( readerror ) {
+        po_file_free( pofile );
         return false;
+    }
 
     po_message_iterator_t it;
     it = po_message_iterator( pofile, NULL );
