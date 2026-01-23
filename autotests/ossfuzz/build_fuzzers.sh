@@ -13,11 +13,14 @@ if [[ $FUZZING_ENGINE == "afl" ]]; then
 fi
 
 # For PoCreator
-cd $SRC
-tar -xJf gettext-*.tar.xz && rm -rf gettext-*.tar.xz
-cd gettext-*/gettext-tools
-./configure --disable-shared --enable-static --prefix $WORK
-make -C libgettextpo install -j$(nproc)
+cd $SRC/gettext
+./autopull.sh
+./autogen.sh
+./configure --disable-java --disable-csharp --disable-d --disable-go --disable-nls \
+  --disable-modula2 --without-emacs --disable-openmp --disable-curses --disable-acl \
+  --disable-xattr --disable-libasprintf --enable-static --disable-shared --prefix=$WORK
+make -j$(nproc)
+make -C gettext-tools/libgettextpo install
 
 cd $SRC/kdesdk-thumbnailers
 cmake -B build -G Ninja \
